@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Question adding</title>
+    <link href="../bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a>
+                    Add a question
+                </a>
+            </li>
+            <li>
+                <a href="Open.html">Open question</a>
+            </li>
+            <li>
+                <a href="Choice.html">Choice question</a>
+            </li>
+            <li>
+                <a href="Scale.html">Scale question</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <h1>
+                Adding choice question
+            </h1>
+            <h3>
+                Please write the choice question, add choices, select correct answers and submit when you are done.
+            </h3>
+            <div class="form-group">
+                <label for="question">Question:</label>
+                <textarea class="form-control" rows="5" id="question"></textarea>
+
+                <label for="comment">Choices; Wrong choices should start with ">". Correct choices should start with
+                    "*>" signs.
+                </label>
+                <button id="choiceExampleButton" type="button" class="btn btn-primary btn-xs"
+                        onclick="toggleChoiceExample()">Show/Hide Example
+                </button>
+
+                <textarea class="form-control" rows="5" id="comment"></textarea>
+
+                <p>
+                    <button type="button" class="btn btn-primary btn-md">Submit</button>
+                </p>
+                <div id=choiceExampleArea style="display: none">
+                    <label for="example">Choices content example:</label>
+                    <textarea readonly class="form-control" rows="5" id="example">
+>This choice is wrong
+*> This answer is the correct one
+>This choice is wrong
+>4th choice, also wrong
+                    </textarea>
+                    <p></p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../javascript/jquery-3.1.1.min.js"></script>
+<script src="../bootstrap-4.0.0-beta.2-dist/js/bootstrap.bundle.js"></script>
+<script src="../javascript/javascriptMain.js"></script>
+</body>
+</html>

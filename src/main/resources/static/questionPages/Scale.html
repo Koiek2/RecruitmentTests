@@ -7,9 +7,11 @@
 	<link rel="icon" href="../pics/testIcon.png">
     <link href="../bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/simple-sidebar.css" rel="stylesheet">
+	<script type="text/javascript" src="../javascript/slider.js"></script>
+	
 </head>
-<body>
 
+<body>
 
 <div id="wrapper">
 
@@ -25,10 +27,21 @@
             <div class="form-group">
                 <label for="question">Question:</label>
                 <textarea class="form-control" rows="5" id="question"></textarea>
-
-                <h1> "TO BE ADDED"</h1>
-
-                <p>
+				<label for="question">Please write adequate text (short description) on the both sides of the scale:</label>
+				
+				<div></div>
+					<textarea class="form-control" rows="1" style="float: left; width: 250px;" id="question"></textarea>
+	
+					<div id="slider" style="float: left; margin: 8px;">
+						<input type="range" id="myRange" value="50">
+					</div> 
+					<textarea class="form-control" style="float: left; width: 250px;" rows="1" cols="5" id="question"></textarea>
+					
+					<button type="button" class="btn btn-primary btn-md" onclick="getSliderVal()" style="margin-left: 10px; margin-right: 10px;">Try it</button>
+					<label for="question" id="dispSliderVal"></label>
+				<div style="clear: both;"></div>
+				
+				<p>		
                     <button type="button" class="btn btn-primary btn-md">Submit</button>
                 </p>
             </div>

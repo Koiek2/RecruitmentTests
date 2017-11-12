@@ -18,31 +18,30 @@
     <script src="../javascript/navbar.js"></script>
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <h1>
-                Adding scale question
-            </h1>
-            <h3>
-                Please write the scale question and submit when you are done.
+            <h3 id="testMessage">
             </h3>
+            <h4>
+                Please write the scale question and submit when you are done.
+            </h4>
             <div class="form-group">
                 <label for="question">Question:</label>
                 <textarea class="form-control" rows="5" id="question"></textarea>
 				<label for="question">Please write adequate text (short description) on the both sides of the scale:</label>
 				
 				<div></div>
-					<textarea class="form-control" rows="1" style="float: left; width: 250px;" id="question"></textarea>
+					<textarea class="form-control" rows="1" style="float: left; width: 250px;" id="leftText"></textarea>
 	
 					<div id="slider" style="float: left; margin: 8px;">
 						<input type="range" id="myRange" value="50">
 					</div> 
-					<textarea class="form-control" style="float: left; width: 250px;" rows="1" cols="5" id="question"></textarea>
+					<textarea class="form-control" style="float: left; width: 250px;" rows="1" cols="5" id="rightText"></textarea>
 					
 					<button type="button" class="btn btn-primary btn-md" onclick="getSliderVal()" style="margin-left: 10px; margin-right: 10px;">Try it</button>
 					<label for="question" id="dispSliderVal"></label>
 				<div style="clear: both;"></div>
 				
 				<p>		
-                    <button type="button" class="btn btn-primary btn-md">Submit</button>
+                    <button type="button" class="btn btn-primary btn-md" onclick="addQuestionToTest('SCALE')">Submit</button>
                 </p>
             </div>
         </div>

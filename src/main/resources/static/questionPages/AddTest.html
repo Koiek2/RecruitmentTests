@@ -4,7 +4,7 @@
 
     <meta charset="UTF-8">
     <title>Question adding</title>
-	<link rel="icon" href="../pics/testIcon.png">
+    <link rel="icon" href="../pics/testIcon.png">
     <link href="../bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../css/simple-sidebar.css" rel="stylesheet">
 </head>
@@ -16,22 +16,24 @@
 
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <h1>
-                Adding open question
-            </h1>
-            <h3>
-                Please write the open question and submit when you are done.
+
+            <h3 id="testMessage">
             </h3>
+            <h4>
+                Starting the addition of new test, removing data from previous unsubmitted test.
+            </h4>
             <div class="form-group">
-                <label for="question">Question:</label>
-                <textarea class="form-control" rows="5" id="question"></textarea>
-                <button type="button" class="btn btn-primary btn-md" onclick="addQuestionToTest('OPEN')">Submit</button>
+                <label for="testName">Name of the test:</label>
+                <textarea class="form-control" rows="1" id="testName"></textarea>
+                <button type="button" class="btn btn-primary btn-md" onclick="startTest()">Submit</button>
             </div>
+            <h3> If you are ready to add the test to database, submit below</h3>
+            <button type="button" class="btn btn-success btn-lg" onclick="addTestToDB()">Submit the final test</button>
         </div>
     </div>
 </div>
-    <script src="../javascript/jquery-3.1.1.min.js"></script>
-    <script src="../bootstrap-4.0.0-beta.2-dist/js/bootstrap.bundle.js"></script>
+<script src="../javascript/jquery-3.1.1.min.js"></script>
+<script src="../bootstrap-4.0.0-beta.2-dist/js/bootstrap.bundle.js"></script>
 <script src="../javascript/javascriptMain.js"></script>
 
 </body>

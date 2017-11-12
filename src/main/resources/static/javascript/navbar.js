@@ -10,6 +10,9 @@
     document.write("<a href=\"index.html\">Home<\/a>");
     document.write("<\/li>");
     document.write("<li>");
+    document.write("<a href=\"AddTest.html\">Add test<\/a>");
+    document.write("<\/li>");
+    document.write("<li>");
     document.write("<a href=\"Open.html\">Open question<\/a>");
     document.write("<\/li>");
     document.write("<li>");

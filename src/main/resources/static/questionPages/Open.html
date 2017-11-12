@@ -16,16 +16,15 @@
 
     <div id="page-content-wrapper">
         <div class="container-fluid">
-            <h1>
-                Adding open question
-            </h1>
-            <h3>
-                Please write the open question and submit when you are done.
+            <h3 id="testMessage">
             </h3>
+            <h4>
+                Please write the open question and submit when you are done.
+            </h4>
             <div class="form-group">
-                <label for="comment">Question:</label>
-                <textarea class="form-control" rows="5" id="comment"></textarea>
-                <button type="button" class="btn btn-primary btn-md">Submit</button>
+                <label for="question">Question:</label>
+                <textarea class="form-control" rows="5" id="question"></textarea>
+                <button type="button" class="btn btn-primary btn-md" onclick="addQuestionToTest('OPEN')">Submit</button>
             </div>
         </div>
     </div>

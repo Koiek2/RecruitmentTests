@@ -22,3 +22,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+src/main/resources/.DS_Store
+src/main/resources/static/.DS_Store
+src/main/.DS_Store

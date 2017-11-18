@@ -1,7 +1,3 @@
-/**
- * Created by Koi on 10/29/2017.
- */
-
 
 
 function toggleChoiceExample() {

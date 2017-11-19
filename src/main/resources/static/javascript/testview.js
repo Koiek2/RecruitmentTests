@@ -95,11 +95,8 @@ function moveQuestion() {
 
     let questions = JSON.parse(localStorage.getItem('testQuestions'));
     for (let i = 0; i < serialRearrange.length; i++) {
-        serialRearrange.toString()
         let questionToMove = serialRearrange[i].split(">")[0]-1;
         let newQuestionPosition = serialRearrange[i].split(">")[1]-1;
-        console.log(questionToMove);
-        console.log(newQuestionPosition);
         if (questionToMove < questions.length && newQuestionPosition < questions.length) {
             let tempQuestion = questions[questionToMove];
             questions.splice(questionToMove, 1);

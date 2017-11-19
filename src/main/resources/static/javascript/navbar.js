@@ -13,7 +13,7 @@
     document.write("<a href=\"AddTest.html\">Add test<\/a>");
     document.write("<\/li>");
     document.write("<li>");
-    document.write("<a href=\"ViewTest.html\">View test<\/a>");
+    document.write("<a href=\"ViewTest.html\">View/Modify test<\/a>");
     document.write("<\/li>");
     document.write("<li>");
     document.write("<a href=\"Open.html\">Add Open question<\/a>");

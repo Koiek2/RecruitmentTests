@@ -20,14 +20,13 @@
             <h3 id="testMessage">
             </h3>
             <h4>
-                Please write the choice question, add choices, select correct answers and submit when you are done.
+                Please write the choice question and add possible choices, then submit the question.
             </h4>
             <div class="form-group">
                 <label for="question">Question:</label>
                 <textarea class="form-control" rows="5" id="question"></textarea>
 
-                <label for="choiceBox">Choices; Wrong choices should start with ">". Correct choices should start with
-                    ">*" signs.
+                <label for="choiceBox">Choices; Each choice should start with ">"
                 </label>
                 <button id="choiceExampleButton" type="button" class="btn btn-primary btn-xs"
                         onclick="toggleChoiceExample()">Show/Hide Example
@@ -41,10 +40,9 @@
                 <div id=choiceExampleArea style="display: none">
                     <label for="example">Choices content example:</label>
                     <textarea readonly class="form-control" rows="5" id="example">
->This choice is wrong
->* This answer is the correct one
->This choice is wrong
->4th choice, also wrong
+>Choice one
+>Second choice
+>Another possible choice
                     </textarea>
                     <p></p>
                     <p></p>

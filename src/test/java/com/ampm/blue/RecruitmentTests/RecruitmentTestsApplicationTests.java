@@ -1,7 +1,6 @@
 package com.ampm.blue.RecruitmentTests;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,15 +24,15 @@ public class RecruitmentTestsApplicationTests {
 
 	@Test
 	public void shouldReturnAllTheTestQuestionsFromDatabase() {
-	
+
 		assertThat(testQuestionRepository.findAll().size()).isEqualTo(3);
 	}
-	
+
 	@Test
-	public void shouldReturnFromTheDatabaseTestQuestionWithIdEqual1(){
-		
+	public void shouldReturnFromTheDatabaseTestQuestionWithIdEqual1() {
+
 		TestQuestion question = testQuestionRepository.findById(1);
-		
+
 		assertThat(question.getId()).isEqualTo(1);
 		assertThat(question.getQuestion()).isEqualTo("Question1");
 		assertThat(question.getExtraData()).isEqualTo("extData1");

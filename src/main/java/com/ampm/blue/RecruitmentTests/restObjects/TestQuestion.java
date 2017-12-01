@@ -8,56 +8,52 @@ public class TestQuestion {
 
 	@Id
 	private int id;
-    private String question;
-    private String extraData;
-    private String type;
+	private String question;
+	private String extraData;
+	private String type;
 
-    public TestQuestion(int id,String question, String extraData, String type) {
-    	this.id= id;
-        this.question = question;
-        this.extraData = extraData;
-        this.type = type;
-    }
+	public TestQuestion(int id, String question, String extraData, String type) {
+		this.id = id;
+		this.question = question;
+		this.extraData = extraData;
+		this.type = type;
+	}
 
-    public TestQuestion() {
-    }
+	public TestQuestion() {
+	}
 
-    
-    public int getId() {
+	public int getId() {
 		return id;
 	}
 
 	public String getQuestion() {
-        return question;
-    }
+		return question;
+	}
 
-    public void setQuestion(String question) {
-        this.question = question;
-    }
+	public void setQuestion(String question) {
+		this.question = question;
+	}
 
-    public String getExtraData() {
-        return extraData;
-    }
+	public String getExtraData() {
+		return extraData;
+	}
 
-    public void setExtraData(String data) {
-        this.extraData = data;
-    }
+	public void setExtraData(String data) {
+		this.extraData = data;
+	}
 
-    public String getType() {
-        return type;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
 
-    @Override
-    public String toString() {
-        return "TestQuestion{" +
-                "question='" + question + '\'' +
-                ", extraData='" + extraData + '\'' +
-                ", type='" + type + '\'' +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "TestQuestion{" + "question='" + question + '\'' + ", extraData='" + extraData + '\'' + ", type='" + type
+				+ '\'' + '}';
+	}
 
 }

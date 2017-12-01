@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 import com.ampm.blue.RecruitmentTests.restObjects.RecruitmentTest;
 
 @Repository
-public interface RecruitmentTestRepository extends JpaRepository<RecruitmentTest, Integer>{
-	
+public interface RecruitmentTestRepository extends JpaRepository<RecruitmentTest, Integer> {
+
 	public RecruitmentTest findById(int id);
 
 }

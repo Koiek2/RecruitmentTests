@@ -1,12 +1,19 @@
 package com.ampm.blue.RecruitmentTests.restObjects;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class TestQuestion {
 
+	@Id
+	private int id;
     private String question;
     private String extraData;
     private String type;
 
-    public TestQuestion(String question, String extraData, String type) {
+    public TestQuestion(int id,String question, String extraData, String type) {
+    	this.id= id;
         this.question = question;
         this.extraData = extraData;
         this.type = type;
@@ -15,7 +22,12 @@ public class TestQuestion {
     public TestQuestion() {
     }
 
-    public String getQuestion() {
+    
+    public int getId() {
+		return id;
+	}
+
+	public String getQuestion() {
         return question;
     }
 

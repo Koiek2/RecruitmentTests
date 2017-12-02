@@ -1,53 +1,58 @@
 package com.ampm.blue.RecruitmentTests.restObjects;
 
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.validation.constraints.NotNull;
+
+@Entity
 public class RecruitmentTest {
-    private int id;
-    private String testName;
-    @NotNull
-    private List<TestQuestion> questions;
 
-    public RecruitmentTest(int id, String testName, List<TestQuestion> questions) {
-        this.id = id;
-        this.testName = testName;
-        this.questions = questions;
-    }
+	@Id
+	private int id;
+	private String testName;
+	@NotNull
+	@OneToMany(cascade = { CascadeType.ALL })
+	private List<TestQuestion> questions;
 
-    public RecruitmentTest() {
-    }
+	public RecruitmentTest(int id, String testName, List<TestQuestion> questions) {
+		this.id = id;
+		this.testName = testName;
+		this.questions = questions;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public RecruitmentTest() {
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public int getId() {
+		return id;
+	}
 
-    public String getTestName() {
-        return testName;
-    }
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    public void setTestName(String testName) {
-        this.testName = testName;
-    }
+	public String getTestName() {
+		return testName;
+	}
 
-    public void setTestQuestions(List<TestQuestion> questions) {
-        this.questions = questions;
-    }
+	public void setTestName(String testName) {
+		this.testName = testName;
+	}
 
-    @Override
-    public String toString() {
-        return "RecruitmentTest{" +
-                "id=" + id +
-                ", testName='" + testName + '\'' +
-                ", questions=" + questions +
-                '}';
-    }
+	public void setTestQuestions(List<TestQuestion> questions) {
+		this.questions = questions;
+	}
 
-    public List<TestQuestion> getQuestions() {
-        return questions;
-    }
+	@Override
+	public String toString() {
+		return "RecruitmentTest{" + "id=" + id + ", testName='" + testName + '\'' + ", questions=" + questions + '}';
+	}
+
+	public List<TestQuestion> getQuestions() {
+		return questions;
+	}
 }

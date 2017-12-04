@@ -32,6 +32,7 @@ function selectBestResult(apiResult) {
                 console.log(errorMessage);
             }
         });
+        
     } else {
         noResultP = document.createElement("p");
         noResultNode = document.createTextNode("No result found for this search");

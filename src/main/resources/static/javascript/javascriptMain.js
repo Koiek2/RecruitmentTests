@@ -68,11 +68,12 @@ function loadAndFillTemplates() {
 }
 function loadAndFillTests() {
 
+    let editorId = 0; //TODO add editors id based on login
     let element = document.getElementById("testsDropdown");
 
     let testNamesAndId = [];
     let request = new XMLHttpRequest();
-    request.open('GET', '/getTestsNames', true);
+    request.open('GET', '/getTestsNames?editorId=' + editorId, true);
 
     request.onload = function() {
         if (request.status >= 200 && request.status < 400) {

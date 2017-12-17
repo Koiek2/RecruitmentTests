@@ -52,7 +52,7 @@ public class QuestionRestController {
     }
     @ResponseBody
     @RequestMapping(method = GET, value = "/getTestsNames")
-    public TestMetadata[] getTestsNames() {
+    public TestMetadata[] getTestsNames(@RequestParam("editorId") int editorId) {
 
         //return all tests names with ids
         return null;

@@ -24,7 +24,8 @@ public class RecruitmentTestsApplicationTests {
 
 	@Test
 	public void shouldReturnAllTheTestQuestionsFromDatabase() {
-
+		System.out.println();
+		testQuestionRepository.findAll().forEach(x->System.out.println(x.toString()));
 		assertThat(testQuestionRepository.findAll().size()).isEqualTo(3);
 	}
 

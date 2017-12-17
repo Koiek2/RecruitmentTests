@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Viewing current test</title>
+    <title>Viewing tests</title>
     <script src="../javascript/testview.js"></script>
 
     <!-- Bootstrap core CSS -->
@@ -32,8 +32,18 @@
         <div class="container-fluid">
             <h1 id="testName"></h1>
 
+            <div id="testIntroDiv">
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose other test
+                    to edit
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu" id="testsDropdown">
+                    <li><a href="#">()</a></li>
+                </ul>
+            </div>
+            <br/>
             <div id="questionsDiv">
-                <script> viewCurrentTest()</script>
             </div>
             <div id=deleteQuestions
                  style="display: inline-block; vertical-align: top;">
@@ -45,7 +55,8 @@
             </div>
             <div id=moveQuestions
                  style="display: inline-block; vertical-align: top;">
-                <h4>Type question number to be put after another question number (for example 7>3 will move 7th question to 3th position)</h4>
+                <h4>Type question number to be put after another question number (for example 7>3 will move 7th question
+                    to 3th position)</h4>
                 <textarea style="width: 500px" title="questions to delete" id=questionsToMove></textarea>
                 <div>
                     <button class="btn btn-primary btn-md" onclick="moveQuestion()">Move</button>
@@ -62,6 +73,10 @@
 <script src="../javascript/jquery-3.1.1.min.js"></script>
 <script src="../bootstrap-4.0.0-beta.2-dist/js/bootstrap.bundle.js"></script>
 <script src="../javascript/testview.js"></script>
+<script src="../javascript/javascriptMain.js"></script>
+<script> viewTestIntro()</script>
+<script> viewCurrentTest()</script>
+<script> loadAndFillTests()</script>
 
 <!-- Menu Toggle Script -->
 </body>

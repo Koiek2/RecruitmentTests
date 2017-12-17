@@ -2,11 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="../pics/testIcon.png">
     <title>Wikipedia API Testing page</title>
     <script type="text/javascript" src="../javascript/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="../javascript/wikiutils.js"></script>
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+    <link href="../bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<script src="../javascript/navbar.js"></script>
+<div id="wrapper">
+
     Enter your search: <input id="Wikipedia" name="Wikipedia"/>
     <select id="lang">
         <option value="en">English</option>
@@ -15,5 +21,8 @@
     </select>
     <button type="submit" id="searchBtn" value="Search">Search</button>
     <div id="article"></div>
+</div>
+
+<script src="../bootstrap-4.0.0-beta.2-dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>

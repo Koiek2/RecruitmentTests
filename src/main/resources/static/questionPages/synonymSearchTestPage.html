@@ -9,7 +9,12 @@
 <body>
 
 Enter the word: <input type="text" id="synonymSearch">
+<select id="lang">
+    <option value="en_US">English</option>
+    <option value="es_ES">Spanish</option>
+    <option value="pl_PL">Polish</option>
+</select>
 <button onclick="lookForSynonym(document.getElementById('synonymSearch').value)">Search</button>
-
+<div id="results"></div>
 </body>
 </html>

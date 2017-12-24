@@ -9,18 +9,17 @@
 <body>
 Enter the text to translate: <input type="text" id="inputText">
 <select id="lang_in">
-    <option value="en">English</option>
+    <option value="en" selected>English</option>
     <option value="es">Spanish</option>
     <option value="pl">Polish</option>
 </select>
-<br>
 <select id="lang_out">
     <option value="en">English</option>
     <option value="es">Spanish</option>
-    <option value="pl">Polish</option>
+    <option value="pl" selected>Polish</option>
 </select>
 <button onclick="translateText(document.getElementById('inputText').value)">Translate</button>
-<div id="results"></div>
+<div id="translation"></div>
 
 </body>
 </html>

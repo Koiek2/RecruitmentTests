@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Translation API testing</title>
+    <script type="text/javascript" src="../javascript/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../javascript/translation_utilities.js"></script>
+</head>
+<body>
+Enter the text to translate: <input type="text" id="inputText">
+<select id="lang_in">
+    <option value="en">English</option>
+    <option value="es">Spanish</option>
+    <option value="pl">Polish</option>
+</select>
+<br>
+<select id="lang_out">
+    <option value="en">English</option>
+    <option value="es">Spanish</option>
+    <option value="pl">Polish</option>
+</select>
+<button onclick="translateText(document.getElementById('inputText').value)">Translate</button>
+<div id="results"></div>
+
+</body>
+</html>

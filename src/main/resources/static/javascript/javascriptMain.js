@@ -24,18 +24,20 @@ function startTestFromTemplate(id, toReplace){
 
     request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
-            templateQuestions = JSON.parse(request.responseText).questions;
+            templateQuestions = JSON.parse(request.responseText);
+            console.log(templateQuestions);
+            if(toReplace){
+                startTest(templateQuestions, id);
+
+            }
+            else{
+                startTest(templateQuestions);
+
+            }
         }
     };
     request.send();
-    if(toReplace){
-        startTest(templateQuestions, id);
 
-    }
-    else{
-        startTest(templateQuestions);
-
-    }
 
 
 
@@ -51,19 +53,21 @@ function loadAndFillTemplates() {
     request.onload = function() {
         if (request.status >= 200 && request.status < 400) {
             templateNamesAndIds = JSON.parse(request.responseText);
+            for (let i = 0; i < templateNamesAndIds.length; i++) {
+                let listItem = document.createElement("li");
+                let itemText = document.createTextNode(templateNamesAndIds[i].id + " - "+ templateNamesAndIds[i].testName);
+                listItem.appendChild(itemText);
+                listItem.onclick = function () {
+                    startTestFromTemplate(templateNamesAndIds[i].id, false)
+                };
+                element.appendChild(listItem);
+            }
+
         }
     };
     request.send();
 
-    for (let i = 0; i < templateNamesAndIds.length; i++) {
-        let listItem = document.createElement("li");
-        let itemText = document.createTextNode(templateNamesAndIds[i].id + " - "+ templateNamesAndIds[i].testName);
-        listItem.appendChild(itemText);
-        listItem.onclick = function () {
-            startTestFromTemplate(templateNamesAndIds[i], false)
-        };
-        element.appendChild(listItem);
-    }
+
 
 }
 function loadAndFillTests() {
@@ -116,6 +120,7 @@ function addTestToDB() {
 
 function startTest(templateQuestions = null, toReplaceId = -1) {
     let testQuestions = [];
+    console.log(templateQuestions);
     if (templateQuestions != null && templateQuestions.length > 0) {
         testQuestions = templateQuestions;
     }

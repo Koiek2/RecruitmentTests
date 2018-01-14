@@ -8,6 +8,12 @@ public class TestMetadata {
     public TestMetadata() {
     }
 
+    public TestMetadata(String testName, int id) {
+        this.testName = testName;
+        this.id = id;
+    }
+
+
     public String getTestName() {
         return testName;
     }

@@ -24,6 +24,9 @@
     document.write("<li>");
     document.write("<a href=\"Scale.html\">Add Scale question<\/a>");
     document.write("<\/li>");
+    document.write("<li>");
+    document.write("<a href=\"PrintTest.html\">Print Test<\/a>");
+    document.write("<\/li>");
     document.write("<\/ul>");
     document.write("<\/div>");
 

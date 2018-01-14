@@ -1,6 +1,7 @@
 package com.ampm.blue.RecruitmentTests;
 
 
+import com.ampm.blue.RecruitmentTests.repository.RecruitmentTestRepository;
 import com.ampm.blue.RecruitmentTests.restObjects.RecruitmentTest;
 import com.ampm.blue.RecruitmentTests.restObjects.TestMetadata;
 import com.ampm.blue.RecruitmentTests.restObjects.TestQuestion;
@@ -25,6 +26,9 @@ public class QuestionRestController {
     @Autowired
     ObjectMapper objectMapper;
 
+    @Autowired
+    RecruitmentTestRepository recruitmentTestRepo;
+
     @ResponseBody
     @RequestMapping(method = POST, value = "/addTest", consumes = APPLICATION_JSON_VALUE)
     public void addTest(@RequestBody RecruitmentTest test) {
@@ -48,9 +52,15 @@ public class QuestionRestController {
 
     @ResponseBody
     @RequestMapping(method = GET, value = "/getTest")
-    public RecruitmentTest getTest(@RequestParam(value = "testId") int id) {
+    public RecruitmentTest getTest(@RequestParam(value = "id") int id) {
 
-        return null;
+        List<TestQuestion> questionList = new ArrayList<>();
+        questionList.add(new TestQuestion(1,"do you like pizza?","","OPEN"));
+        questionList.add(new TestQuestion(2,"do you like hot-dogs?","","OPEN"));
+        questionList.add(new TestQuestion(3,"do you like french fries?","","OPEN"));
+        RecruitmentTest test = new RecruitmentTest(5,"foodTest",questionList);
+
+        return test;
 
 
     }
@@ -60,8 +70,8 @@ public class QuestionRestController {
 
         //return all tests names with ids
 
-        TestMetadata testMetadata = new TestMetadata("Animals Template", 5);
-        TestMetadata testMetadata2 = new TestMetadata("Not existing template", 6);
+        TestMetadata testMetadata = new TestMetadata("Food test", 5);
+        TestMetadata testMetadata2 = new TestMetadata("To be added", 6);
 
         return new TestMetadata[]{testMetadata,testMetadata2};
 //        return null;
@@ -79,7 +89,7 @@ public class QuestionRestController {
         questionList.add(new TestQuestion(1,"do you like puppies?","","OPEN"));
         questionList.add(new TestQuestion(2,"do you like cats?","","OPEN"));
         questionList.add(new TestQuestion(3,"do you like zebras?","","OPEN"));
-        RecruitmentTest test = new RecruitmentTest(5,"sometest2",questionList);
+        RecruitmentTest test = new RecruitmentTest(5,"animalsTest",questionList);
 
         return test.getQuestions().toArray(new TestQuestion[0]);
 

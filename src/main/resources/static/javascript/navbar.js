@@ -6,6 +6,13 @@
     document.write("Edit/Create test");
     document.write("<\/a>");
     document.write("<\/li>");
+
+
+    document.write("<button id = 'logout' onclick=logOut()>");
+    document.write("logout");
+    document.write("<\/button>");
+
+
     document.write("<li>");
     document.write("<a href=\"MainPage.html\">Home<\/a>");
     document.write("<\/li>");
@@ -29,4 +36,3 @@
     document.write("<\/li>");
     document.write("<\/ul>");
     document.write("<\/div>");
-

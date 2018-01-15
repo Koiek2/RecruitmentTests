@@ -34,5 +34,11 @@
     document.write("<li>");
     document.write("<a href=\"WikiSearch.html\">Wikipedia search<\/a>");
     document.write("<\/li>");
+    document.write("<li>");
+    document.write("<a href=\"synonymSearchTestPage.html\">Synonym search<\/a>");
+    document.write("<\/li>");
+    document.write("<li>");
+    document.write("<a href=\"PrintTest.html\">Print Test as PDF<\/a>");
+    document.write("<\/li>");
     document.write("<\/ul>");
     document.write("<\/div>");

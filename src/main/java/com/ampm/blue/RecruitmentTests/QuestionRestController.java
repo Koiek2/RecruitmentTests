@@ -1,15 +1,18 @@
 package com.ampm.blue.RecruitmentTests;
 
-import com.ampm.blue.RecruitmentTests.restObjects.Question;
 
+import com.ampm.blue.RecruitmentTests.repository.RecruitmentTestRepository;
 import com.ampm.blue.RecruitmentTests.restObjects.RecruitmentTest;
+import com.ampm.blue.RecruitmentTests.restObjects.TestMetadata;
+import com.ampm.blue.RecruitmentTests.restObjects.TestQuestion;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -23,46 +26,94 @@ public class QuestionRestController {
     @Autowired
     ObjectMapper objectMapper;
 
+    @Autowired
+    RecruitmentTestRepository recruitmentTestRepo;
+
     @ResponseBody
     @RequestMapping(method = POST, value = "/addTest", consumes = APPLICATION_JSON_VALUE)
     public void addTest(@RequestBody RecruitmentTest test) {
+        if (test.getId() == -1) {
 
+            //add new test with automatic id
+        } else {
+            //replace test with given id
+        }
         System.out.println(test.getTestName());
         System.out.println(test.getQuestions().size());
     }
 
-    @ResponseBody
-    @RequestMapping(method = GET, value = "/asdasd")
-    public void test() throws Exception {
-        String testJson = "{\"id\":123,\"testName\":\"\\\"test123\\\"\",\"questions\":[{\"question\":\"asd\",\"extraData\":\"\",\"type\":\"OPEN\"},{\"question\":\"asd\",\"extraData\":\">123\\n>1255\\n>*77\",\"type\":\"CHOICE\"},{\"question\":\"asdfa\",\"extraData\":\"1 || 2\",\"type\":\"SCALE\"},{\"question\":\"asd11\",\"extraData\":\"\",\"type\":\"OPEN\"}]}";
-        RecruitmentTest recruitmentTest = objectMapper.readValue(testJson, RecruitmentTest.class);
-        System.out.println(recruitmentTest);
-
-    }
 
     @ResponseBody
     @RequestMapping(method = POST, value = "/removeTest")
-    public void removeTest(@RequestBody Question marker, @RequestParam("token") String token) {
+    public void removeTest(@RequestBody RecruitmentTest test, @RequestParam("token") String token) {
 
 
     }
 
     @ResponseBody
     @RequestMapping(method = GET, value = "/getTest")
-    public RecruitmentTest getTest(@RequestParam(value = "testId", defaultValue = "0") int id) {
+    public RecruitmentTest getTest(@RequestParam(value = "id") int id) {
 
-        return null;
+        List<TestQuestion> questionList = new ArrayList<>();
+        questionList.add(new TestQuestion(1,"do you like pizza?","","OPEN"));
+        questionList.add(new TestQuestion(2,"do you like hot-dogs?","","OPEN"));
+        questionList.add(new TestQuestion(3,"do you like french fries?","","OPEN"));
+        RecruitmentTest test = new RecruitmentTest(5,"foodTest",questionList);
+
+        return test;
+
+
+    }
+    @ResponseBody
+    @RequestMapping(method = GET, value = "/getTestsNames")
+    public TestMetadata[] getTestsNames(@RequestParam("editorId") int editorId) {
+
+        //return all tests names with ids
+
+        TestMetadata testMetadata = new TestMetadata("Food test", 5);
+        TestMetadata testMetadata2 = new TestMetadata("To be added", 6);
+
+        return new TestMetadata[]{testMetadata,testMetadata2};
+//        return null;
 
 
     }
 
     @ResponseBody
-    @RequestMapping(method = GET, value = "/getTestByName")
-    public RecruitmentTest getTestByName(@RequestParam("testName") String testName) {
+    @RequestMapping(method = GET, value = "/getTemplate")
+    public TestQuestion[] getTemplate(@RequestParam(value = "id") int id) {
 
-        return null;
+
+        //get temp
+        List<TestQuestion> questionList = new ArrayList<>();
+        questionList.add(new TestQuestion(1,"do you like puppies?","","OPEN"));
+        questionList.add(new TestQuestion(2,"do you like cats?","","OPEN"));
+        questionList.add(new TestQuestion(3,"do you like zebras?","","OPEN"));
+        RecruitmentTest test = new RecruitmentTest(5,"animalsTest",questionList);
+
+        return test.getQuestions().toArray(new TestQuestion[0]);
+
 
 
     }
+
+
+        //request.open('GET', '/getTemplate?id='+id, true);
+
+    @ResponseBody
+    @RequestMapping(method = GET, value = "/getTemplatesNames")
+    public TestMetadata[] getTemplatesNames() {
+
+        //return all templates names with ids
+
+        TestMetadata testMetadata = new TestMetadata("Animals Template", 5);
+        TestMetadata testMetadata2 = new TestMetadata("Not existing template", 6);
+
+        return new TestMetadata[]{testMetadata,testMetadata2};
+
+
+    }
+    //    request.open('GET', '/getTemplatesNames', true);
+
 
 }

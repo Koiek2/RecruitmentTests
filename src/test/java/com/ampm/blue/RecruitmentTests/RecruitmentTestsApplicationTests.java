@@ -22,20 +22,4 @@ public class RecruitmentTestsApplicationTests {
 	public void contextLoads() {
 	}
 
-	@Test
-	public void shouldReturnAllTheTestQuestionsFromDatabase() {
-
-		assertThat(testQuestionRepository.findAll().size()).isEqualTo(3);
-	}
-
-	@Test
-	public void shouldReturnFromTheDatabaseTestQuestionWithIdEqual1() {
-
-		TestQuestion question = testQuestionRepository.findById(1);
-
-		assertThat(question.getId()).isEqualTo(1);
-		assertThat(question.getQuestion()).isEqualTo("Question1");
-		assertThat(question.getExtraData()).isEqualTo("extData1");
-		assertThat(question.getType()).isEqualTo("OPEN");
-	}
 }

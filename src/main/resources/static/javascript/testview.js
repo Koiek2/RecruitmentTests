@@ -1,13 +1,24 @@
-function viewCurrentTest() {
 
 
-    let questions = JSON.parse(localStorage.getItem('testQuestions'));
-    let element = document.getElementById("questionsDiv");
+
+
+function viewTestIntro() {
+
+
+    let element = document.getElementById("testIntroDiv");
     document.getElementById("testName").value = window.localStorage.getItem("testName");
     let h3 = document.createElement("h3");
+    let lineBreak2 = document.createElement("br");
     let h3Text = document.createTextNode("Viewing test: " + window.localStorage.getItem("testName"));
     h3.appendChild(h3Text);
+    h3.appendChild(lineBreak2);
     element.appendChild(h3);
+
+}
+
+function viewCurrentTest() {
+    let element = document.getElementById("questionsDiv");
+    let questions = JSON.parse(localStorage.getItem('testQuestions'));
     for (let i = 0; i < questions.length; i++) {
         let question = questions[i];
         let para = document.createElement("p");

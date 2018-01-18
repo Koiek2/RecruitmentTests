@@ -40,5 +40,8 @@
     document.write("<li>");
     document.write("<a href=\"PrintTest.html\">Print Test as PDF<\/a>");
     document.write("<\/li>");
+    document.write("<li>");
+    document.write("<a href=\"translationTestPage.html\">Translation search<\/a>");
+    document.write("<\/li>");
     document.write("<\/ul>");
     document.write("<\/div>");

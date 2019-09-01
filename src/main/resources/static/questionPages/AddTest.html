@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Question adding</title>
+    <link rel="icon" href="../pics/testIcon.png">
+    <link href="../bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+</head>
+<body>
+
+
+<div id="wrapper">
+    <script src="../javascript/navbar.js"></script>
+
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+
+            <h3 id="testMessage">
+            </h3>
+            <h4>
+                Starting the addition of new test, removing data from previous unsubmitted test.
+            </h4>
+            <div class="form-group">
+                <label for="testName">Name of the test:</label>
+                <textarea class="form-control" rows="1" id="testName"></textarea>
+                <button type="button" class="btn btn-primary btn-md" onclick="startTest()">Submit</button>
+
+                <h4>
+                    Or chose a template for test
+                </h4>
+
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose template
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu" id="templateDropdown">
+                    </ul>
+                </div>
+            </div>
+            <h3> If test is ready, submit below.</h3>
+            <button type="button" class="btn btn-success btn-lg" onclick="addTestToDB()">Add test to Database</button>
+        </div>
+
+    </div>
+</div>
+<script src="../javascript/jquery-3.1.1.min.js"></script>
+<script src="../bootstrap-4.0.0-beta.2-dist/js/bootstrap.bundle.js"></script>
+<script src="../javascript/javascriptMain.js"></script>
+<script> loadAndFillTemplates() </script>
+</body>
+</html>

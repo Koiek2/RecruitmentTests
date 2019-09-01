@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Viewing tests</title>
+    <script src="../javascript/testview.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="../pics/testIcon.png">
+    <!-- Custom styles for this template -->
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <!-- Sidebar -->
+    <script src="../javascript/navbar.js"></script>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div class="container-fluid">
+            <h1 id="testName"></h1>
+
+            <div id="testIntroDiv">
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Choose other test
+                    to edit
+                    <span class="caret"></span></button>
+                <span>warning: choosing different test to edit will remove unsubmitted test data</span>
+
+                <ul class="dropdown-menu" id="testsDropdown">
+                    <li><a href="#">()</a></li>
+                </ul>
+            </div>
+            <br/>
+            <div id="questionsDiv">
+            </div>
+            <div id=deleteQuestions
+                 style="display: inline-block; vertical-align: top;">
+                <h4>Type question numbers you would like to delete (separated by space)</h4>
+                <textarea style="width: 500px" title="questions to delete" id=questionsToRemove></textarea>
+                <div>
+                    <button class="btn btn-primary btn-md" onclick="deleteQuestions()">Delete</button>
+                </div>
+            </div>
+            <div id=moveQuestions
+                 style="display: inline-block; vertical-align: top;">
+                <h4>Type question number to be put after another question number (for example 7>3 will move 7th question
+                    to 3th position)</h4>
+                <textarea style="width: 500px" title="questions to delete" id=questionsToMove></textarea>
+                <div>
+                    <button class="btn btn-primary btn-md" onclick="moveQuestion()">Move</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- Bootstrap core JavaScript -->
+<script src="../javascript/jquery-3.1.1.min.js"></script>
+<script src="../bootstrap-4.0.0-beta.2-dist/js/bootstrap.bundle.js"></script>
+<script src="../javascript/testview.js"></script>
+<script src="../javascript/javascriptMain.js"></script>
+<script> viewTestIntro()</script>
+<script> viewCurrentTest()</script>
+<script> loadAndFillTests()</script>
+
+<!-- Menu Toggle Script -->
+</body>
+
+</html>

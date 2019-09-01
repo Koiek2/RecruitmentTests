@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="../pics/testIcon.png">
+    <title>Synonym searching</title>
+    <script type="text/javascript" src="../javascript/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="../javascript/synonym_utilities.js"></script>
+    <link href="../css/simple-sidebar.css" rel="stylesheet">
+    <link href="../bootstrap-4.0.0-beta.2-dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+    <script src="../javascript/navbar.js"></script>
+    <div id="page-content-wrapper">
+        Enter the word: <input type="text" id="synonymSearch">
+        <select id="lang">
+            <option value="en_US">English</option>
+            <option value="es_ES">Spanish</option>
+            <option value="pl_PL">Polish</option>
+        </select>
+        <button onclick="lookForSynonym(document.getElementById('synonymSearch').value)">Search</button>
+        <div id="results"></div>
+    </div>
+</div>
+<script src="../bootstrap-4.0.0-beta.2-dist/js/bootstrap.bundle.js"></script>
+<script src="../javascript/javascriptMain.js"></script>
+</body>
+</html>
